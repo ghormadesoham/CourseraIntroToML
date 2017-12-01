@@ -20,9 +20,11 @@ X_rec = zeros(size(Z, 1), size(U, 1));
 %
 %               Notice that U(j, 1:K) is a row vector.
 %               
-
-
-
+for k = 1:K
+     U_transpose = U(:,1:k)';
+     %(m x n)= (m x K)x(K x n)
+     X_rec = Z(:,1:k) * U_transpose;
+end
 % =============================================================
 
 end
